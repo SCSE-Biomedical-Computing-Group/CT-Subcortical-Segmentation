@@ -1,0 +1,18 @@
+Background: 0
+L Ventricle: 4
+R Ventricle: 43
+L Thalamus: 10
+R Thalamus: 49
+L Caudate: 11
+R Caudate: 50
+L Putamen: 12
+R Putamen: 51
+L Pallidum: 13
+R Pallidum: 52
+L Hippocampus: 17
+R Hippocampus: 53
+L Amygdala: 18
+R Amygdala: 54
+L Accumbens Area: 26
+R Accumbens Area: 58
+Brainstem: 16
