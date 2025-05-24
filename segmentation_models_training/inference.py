@@ -41,11 +41,11 @@ def run_inference3D(model, test_dir, output_dir, device):
             img = nib.load(img_path)
             img_data = img.get_fdata()
 
-            img_data = img_data.unsqueeze(0).to(device)
+            img_data = torch.tensor(img_data, dtype=torch.float32).unsqueeze(0).unsqueeze(0).to(device)
             output = model(img_data)
             pred = torch.argmax(output, dim=1).long()
 
-            pred = pred.cpu().numpy().astype(np.int16)
+            pred = pred[0].cpu().numpy().astype(np.int16)
             pred_vol = nib.Nifti1Image(pred, affine=np.eye(4))
             output_path = os.path.join(output_dir, img_file)
             nib.save(pred_vol, output_path)
