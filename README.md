@@ -1,7 +1,5 @@
 # CT Brain Subcortical Segmentation
 
-![Overview](misc/overview.png)
-
 The human subcortex contains many structures that hold key responsibilities in many physiological functions fundamental to daily living. These structures have been found to exhibit volume and shape changes during development of neurodegenerative disorders and hence, automated segmentation of these subcortical anatomies will be meaningful for future studies on understanding and developing computer-aided solutions for neurological conditions. The main contributions of this research are:
 * Proposal of an automated cross-domain subcortical segmentation label generation framework
 * Generation of the first publicly available CT subcortical segmentation dataset
