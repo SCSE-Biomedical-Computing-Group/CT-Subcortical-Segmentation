@@ -13,6 +13,8 @@ The code and outputs of this research are organised according to the main contri
 
 ```subcortical_segmentation_dataset``` contains the generated subcortical segmentation masks. The generated subcortical masks contains 17 subcortical regions. The label mapping is available in label_mapping.txt.
 
+```transfer_learning``` contains the notebooks and model weights used for the transfer learning experiments to validate the utility of our generated CT subcortical segmentation dataset.
+
 ```segmentation_models_training``` contains the script for running the training of the segmentation models. The models trained include 2D UNet, 3D UNet, Swin UNETR and nnU-Net.
 
 ## Set-Up
@@ -27,6 +29,9 @@ To run the code in this repository, it is recommended to create a new python/con
 * The dataset only contains the generated masks and not the actual CT scans as we do not own the CT scans data and they should be obtained the SynthRAD 2023 Challenge (Task 1) page itself.
 
 * upon obtaining the CT scans, the scans should be processed using the mri_convert tool in the FreeSurfer package. The command is as follows:<br>```mri_convert --conform <input_volume> <output_volume>```
+
+### Transfer Learning
+* This folder contains the notebooks used for the transfer learning experiments. The transfer learning experiments were conducted using 3D UNet and ResUNet. The model weights are made available in their respective folders.
 
 ### Training of CT Subcortical Segmentation Models
 * The models can be found in the ```models``` folder. The UNets are implemented in PyTorch while the SwinUNETR and nnU-Net are imported from MONAI and its python library respectively.
