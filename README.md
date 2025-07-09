@@ -28,7 +28,15 @@ To run the code in this repository, it is recommended to create a new python/con
 ### Generated Subcortical Segmentation Dataset
 * The dataset only contains the generated masks and not the actual CT scans as we do not own the CT scans data and they should be obtained the SynthRAD 2023 Challenge (Task 1) page itself.
 
-* upon obtaining the CT scans, the scans should be processed using the mri_convert tool in the FreeSurfer package. The command is as follows:<br>```mri_convert --conform --out_data_type float <input_volume> <output_volume>```
+* Upon obtaining the CT scans, the scans should be processed using the mri_convert tool in the FreeSurfer package. The steps are as follows:
+  
+  For scans that have any dimension that exceeds 256mm, the following command needs to be run to crop it to a maximum of 256:
+  
+  ```mri_convert --cropsize 256 256 256 <input_volume> <output_volume>```
+  
+  After which, run the following commands for all scans:
+  
+  ```mri_convert --conform --out_data_type float <input_volume> <output_volume>```
 
 ### Transfer Learning
 * This folder contains the notebooks used for the transfer learning experiments. The transfer learning experiments were conducted using 3D UNet and ResUNet. The model weights are made available in their respective folders.
